@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/task_constraint"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/topGuideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="@dimen/guideline_margin" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/startGuideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="@dimen/guideline_margin" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/endGuideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_end="@dimen/guideline_margin" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/bottomGuideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_end="@dimen/guideline_margin" />
+
+    <TextView
+        android:id="@+id/nameTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/taskView_textReturn_margin"
+        android:text="@string/name"
+        android:textColor="@color/task_recycler_item_font"
+        android:textSize="@dimen/taskView_text_size_1"
+        app:layout_constraintStart_toStartOf="@id/startGuideline"
+        app:layout_constraintTop_toTopOf="@id/topGuideline" />
+
+    <TextView
+        android:id="@+id/nameSubTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="рыбалка"
+        android:textColor="@color/task_recycler_item_font"
+        android:textSize="@dimen/taskView_text_size_2"
+        app:layout_constraintStart_toStartOf="@id/startGuideline"
+        app:layout_constraintTop_toBottomOf="@id/nameTextView" />
+
+    <TextView
+        android:id="@+id/dateTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/taskView_textReturn_margin"
+        android:text="@string/date"
+        android:textColor="@color/task_recycler_item_font"
+        android:textSize="@dimen/taskView_text_size_1"
+        app:layout_constraintStart_toStartOf="@id/startGuideline"
+        app:layout_constraintTop_toBottomOf="@id/nameSubTextView" />
+
+    <TextView
+        android:id="@+id/dateSubTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/task_recycler_item_font"
+        android:textSize="@dimen/taskView_text_size_2"
+        app:layout_constraintStart_toStartOf="@id/startGuideline"
+        app:layout_constraintTop_toBottomOf="@id/dateTextView" />
+
+    <TextView
+        android:id="@+id/locationTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/taskView_textReturn_margin"
+        android:text="@string/location"
+        android:textColor="@color/task_recycler_item_font"
+        android:textSize="@dimen/taskView_text_size_1"
+        app:layout_constraintStart_toStartOf="@id/startGuideline"
+        app:layout_constraintTop_toBottomOf="@id/dateSubTextView" />
+
+    <TextView
+        android:id="@+id/locationSubTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/task_recycler_item_font"
+        android:textSize="@dimen/taskView_text_size_2"
+        app:layout_constraintStart_toStartOf="@id/startGuideline"
+        app:layout_constraintTop_toBottomOf="@id/locationTextView" />
+
+    <TextView
+        android:id="@+id/infoTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/taskView_textReturn_margin"
+        android:text="@string/info"
+        android:textColor="@color/task_recycler_item_font"
+        android:textSize="@dimen/taskView_text_size_1"
+        app:layout_constraintStart_toStartOf="@id/startGuideline"
+        app:layout_constraintTop_toBottomOf="@id/locationSubTextView" />
+
+    <TextView
+        android:id="@+id/infoSubTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:singleLine="true"
+        android:textColor="@color/task_recycler_item_font"
+        android:textSize="@dimen/taskView_text_size_2"
+        app:layout_constraintStart_toStartOf="@id/startGuideline"
+        app:layout_constraintTop_toBottomOf="@id/infoTextView" />
+
+    <TextView
+        android:id="@+id/completedTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/taskView_textReturn_margin"
+        android:text="@string/comleted"
+        android:textColor="@color/task_recycler_item_font"
+        android:textSize="@dimen/taskView_text_size_1"
+        app:layout_constraintStart_toStartOf="@id/startGuideline"
+        app:layout_constraintTop_toBottomOf="@id/infoSubTextView" />
+
+    <TextView
+        android:id="@+id/completedSubTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:singleLine="true"
+        android:textColor="@color/task_recycler_item_font"
+        android:textSize="@dimen/taskView_text_size_2"
+        app:layout_constraintStart_toStartOf="@id/startGuideline"
+        app:layout_constraintTop_toBottomOf="@id/completedTextView" />
+
+
+    <TextView
+        android:id="@+id/weatherTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/taskView_textReturn_margin"
+        android:text="@string/weather"
+        android:textColor="@color/task_recycler_item_font"
+        android:textSize="@dimen/taskView_text_size_1"
+        app:layout_constraintStart_toStartOf="@id/startGuideline"
+        app:layout_constraintTop_toBottomOf="@+id/completedSubTextView" />
+
+    <ImageView
+        android:id="@+id/weatherImageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="@id/startGuideline"
+        app:layout_constraintTop_toBottomOf="@+id/weatherTextView" />
+
+    <TextView
+        android:id="@+id/weatherTempTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:textColor="@color/task_recycler_item_font"
+        android:textSize="@dimen/tempTextSize"
+        app:layout_constraintBottom_toBottomOf="@+id/weatherImageView"
+        app:layout_constraintStart_toEndOf="@id/weatherImageView"
+        app:layout_constraintTop_toTopOf="@+id/weatherImageView" />
+
+    <TextView
+        android:id="@+id/weatherTempCTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/c"
+        android:textColor="@color/task_recycler_item_font"
+        android:textSize="@dimen/tempCTextSize"
+        app:layout_constraintStart_toEndOf="@id/weatherTempTextView"
+        app:layout_constraintTop_toTopOf="@+id/weatherTempTextView" />
+
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/menuTaskFab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:src="@drawable/ic_baseline_apps_24"
+        app:backgroundTint="@color/fab_bg_tint"
+        app:fabSize="normal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:tint="@color/fab_tint" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

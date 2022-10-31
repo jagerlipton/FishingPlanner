@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="@dimen/recycler_item_margin"
+    android:layout_marginTop="@dimen/recycler_item_margin"
+    android:layout_marginEnd="@dimen/recycler_item_margin"
+    android:background="@drawable/task_recycler_item_bg">
+
+    <TextView
+        android:id="@+id/nameTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/recycler_item_name_text_margin"
+        android:layout_marginTop="@dimen/recycler_item_name_text_margin"
+        android:text="Name"
+        android:textColor="@color/task_recycler_item_font"
+        android:textSize="@dimen/nameTextSize"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textCityName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/recycler_item_name_text_margin"
+        android:layout_marginTop="@dimen/recycler_item_name_text_margin"
+        android:textColor="@color/task_recycler_item_font"
+        android:textSize="@dimen/cityTextSize"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/nameTextView"
+        tools:text="10" />
+
+    <TextView
+        android:id="@+id/dateTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/recycler_item_name_text_margin"
+        android:layout_marginTop="@dimen/recycler_item_name_text_margin"
+        android:text="Date"
+        android:textColor="@color/task_recycler_item_font"
+        android:textSize="@dimen/dateTextSize"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textCityName" />
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/weatherContainer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:background="@drawable/task_recyclerview_item_weather_bg"
+        android:padding="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/iconImageView"
+            android:layout_width="@dimen/recycler_item_icon_size"
+            android:layout_height="@dimen/recycler_item_icon_size"
+            android:scaleType="centerCrop"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/icon_tempTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:textColor="@color/task_recycler_item_font"
+            android:textSize="@dimen/tempTextSize"
+            app:layout_constraintBottom_toBottomOf="@+id/iconImageView"
+            app:layout_constraintStart_toEndOf="@+id/iconImageView"
+            app:layout_constraintTop_toTopOf="@+id/iconImageView"
+            tools:text="10" />
+
+        <TextView
+            android:id="@+id/icon_temp_C_TextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="\u2103"
+            android:textColor="@color/task_recycler_item_font"
+            android:textSize="@dimen/tempCTextSize"
+            app:layout_constraintStart_toEndOf="@+id/icon_tempTextView"
+            app:layout_constraintTop_toTopOf="@+id/icon_tempTextView" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <View
+        android:id="@+id/borderline"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_margin="@dimen/recycler_item_name_text_margin"
+        android:background="@color/task_recycler_item_borderline"
+        app:layout_constraintTop_toBottomOf="@+id/weatherContainer" />
+
+    <TextView
+        android:id="@+id/completedTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/recycler_item_name_text_margin"
+        android:layout_marginBottom="@dimen/recycler_item_name_text_margin"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/borderline" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

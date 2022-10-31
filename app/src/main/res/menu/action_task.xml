@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+
+    <item
+        android:id="@+id/comleted"
+        android:title="Пометить как выполненное" />
+
+    <item
+        android:id="@+id/change"
+        android:title="Изменить" />
+    <item
+        android:id="@+id/delete"
+        android:title="Удалить" />
+
+</menu>

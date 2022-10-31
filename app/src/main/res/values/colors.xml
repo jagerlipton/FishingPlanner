@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#10ADE2</color>
+    <color name="colorPrimaryDark">#3E6E26</color>
+    <color name="colorAccent">#000000</color>
+
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="gray">#656565</color>
+    <color name="card_bg_stroke_color">#000000</color>
+    <color name="task_recycler_item_bg">#7CC7E9ED</color>
+    <color name="task_recycler_item_stroke">#D2D3D5</color>
+    <color name="task_recycler_item_weather_bg">#FDFDFD</color>
+    <color name="task_recycler_item_weather_stroke">#DEE0E3</color>
+    <color name="task_recycler_item_borderline">#D2D3D5</color>
+    <color name="task_recycler_item_font">#000000</color>
+    <color name="fab_bg_tint">#E91E63</color>
+    <color name="fab_tint">#FFFFFF</color>
+    <color name="editText_corner">#C8C8C8</color>
+    <color name="editText_text_bg">#FFFFFF</color>
+
+</resources>

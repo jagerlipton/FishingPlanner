@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">FishingPlanner</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+    <string name="name">Название мероприятия:</string>
+    <string name="date">Дата:</string>
+    <string name="location">Локация:</string>
+    <string name="info">Заметка:</string>
+    <string name="ended">Выполнено:</string>
+    <string name="weather">Погода:</string>
+    <string name="getDate">Выбор даты</string>
+
+    <string name="cancel">Закрыть</string>
+    <string name="save">Сохранить</string>
+    <string name="comleted">Статус:</string>
+    <string name="c">C</string>
+
+</resources>

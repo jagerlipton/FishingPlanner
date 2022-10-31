@@ -1,0 +1,28 @@
+<resources>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+
+    <dimen name="guideline_margin">16dp</dimen>
+    <dimen name="card_bg_stroke_width">2dp</dimen>
+    <dimen name="card_bg_corner_radius">20dp</dimen>
+    <dimen name="textField_margin_top">8dp</dimen>
+
+    <dimen name="nameTextSize">20sp</dimen>
+    <dimen name="dateTextSize">16sp</dimen>
+    <dimen name="cityTextSize">16sp</dimen>
+    <dimen name="tempTextSize">25sp</dimen>
+    <dimen name="tempCTextSize">16sp</dimen>
+    <dimen name="comletedTextSize">16sp</dimen>
+
+    <dimen name="taskView_text_size_1">16sp</dimen>
+    <dimen name="taskView_text_size_2">20sp</dimen>
+
+    <dimen name="recycler_item_icon_size">64dp</dimen>
+
+    <dimen name="recycler_item_name_text_margin">8dp</dimen>
+    <dimen name="dropdown_item_padding">8dp</dimen>
+    <dimen name="recycler_item_margin">8dp</dimen>
+    <dimen name="taskView_textReturn_margin">8dp</dimen>
+
+</resources>
