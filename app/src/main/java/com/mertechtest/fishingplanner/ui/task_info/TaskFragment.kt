@@ -10,20 +10,27 @@ import android.view.ViewGroup
 import androidx.appcompat.widget.PopupMenu
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
+import com.mertechtest.fishingplanner.App
 import com.mertechtest.fishingplanner.R
 import com.mertechtest.fishingplanner.data.model.StateResult
 import com.mertechtest.fishingplanner.data.model.TaskDBmodel
 import com.mertechtest.fishingplanner.databinding.FragmentTaskBinding
 import com.mertechtest.fishingplanner.ui.EventObserver
 import com.squareup.picasso.Picasso
-import org.koin.androidx.viewmodel.ext.android.viewModel
+import javax.inject.Inject
 
 class TaskFragment : Fragment() {
 
     private var _binding: FragmentTaskBinding? = null
     private val binding get() = _binding!!
-    private val taskViewModel by viewModel<TaskViewModel>()
+
+    lateinit var taskViewModel: TaskViewModel
+
+    @Inject
+    lateinit var factory: TaskViewModelFactory
+
     private var currentTask = TaskDBmodel()
 
     override fun onCreateView(
@@ -37,9 +44,15 @@ class TaskFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        (context?.applicationContext as App).appComponent.inject(this)
+
+        taskViewModel = ViewModelProvider(this, factory)[TaskViewModel::class.java]
+
         binding.menuTaskFab.setOnClickListener {
             showPopup(binding.menuTaskFab)
         }
+
         observers()
     }
 
@@ -129,7 +142,7 @@ class TaskFragment : Fragment() {
 
     private fun changeTask(task: TaskDBmodel) {
         val bundle = Bundle()
-         bundle.putInt("taskId", task.id.toInt())
+        bundle.putInt("taskId", task.id.toInt())
         findNavController().navigate(R.id.action_taskFragment_to_taskEditFragment, bundle)
     }
 

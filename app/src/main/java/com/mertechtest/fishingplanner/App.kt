@@ -1,19 +1,22 @@
 package com.mertechtest.fishingplanner
 
 import android.app.Application
-import com.mertechtest.fishingplanner.di.appModule
-import org.koin.android.ext.koin.androidContext
-import org.koin.core.context.startKoin
+import com.mertechtest.fishingplanner.di.AppComponent
+import com.mertechtest.fishingplanner.di.AppModule
+import com.mertechtest.fishingplanner.di.DaggerAppComponent
 
 
 class App : Application() {
+    lateinit var appComponent: AppComponent
+
+
     override fun onCreate() {
         super.onCreate()
 
-        startKoin {
-            modules(listOf(appModule))
-            androidContext(this@App)
-        }
+        appComponent = DaggerAppComponent.builder()
+            .appModule(AppModule(this))
+            .build()
+
     }
 
 

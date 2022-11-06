@@ -13,7 +13,7 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 
-class MainViewModel(private val repository: Repository) : ViewModel() {
+class MainViewModel(val repository: Repository) : ViewModel() {
 
     private val _taskListLiveData =
         MutableLiveData<Event<StateResult<List<TaskDBmodel>>>>()

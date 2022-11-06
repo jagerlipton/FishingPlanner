@@ -56,7 +56,7 @@ dependencies {
     implementation "androidx.lifecycle:lifecycle-livedata-ktx:2.5.1"
 
     implementation 'org.jetbrains.kotlinx:kotlinx-datetime:0.4.0'
-    
+
     implementation 'androidx.fragment:fragment-ktx:1.5.4'
 
     implementation 'androidx.room:room-runtime:2.4.3'
@@ -67,16 +67,16 @@ dependencies {
 
     implementation 'com.squareup.picasso:picasso:2.71828'
 
-//    def daggerVer = "2.44" // or latest version
-//    implementation "com.google.dagger:dagger:$daggerVer"
-//    implementation "com.google.dagger:dagger-android-support:$daggerVer"
-//    kapt "com.google.dagger:dagger-android-processor:$daggerVer"
-//    kapt "com.google.dagger:dagger-compiler:$daggerVer"
-//    implementation 'androidx.fragment:fragment-ktx:1.5.4'
+    def daggerVer = "2.44" // or latest version
+    implementation "com.google.dagger:dagger:$daggerVer"
+    implementation "com.google.dagger:dagger-android-support:$daggerVer"
+    kapt "com.google.dagger:dagger-android-processor:$daggerVer"
+    kapt "com.google.dagger:dagger-compiler:$daggerVer"
 
-    implementation 'io.insert-koin:koin-core:3.2.0-beta-1'
-    implementation 'io.insert-koin:koin-android:3.2.0-beta-1'
-    testImplementation 'io.insert-koin:koin-test:3.2.0-beta-1'
+
+//    implementation 'io.insert-koin:koin-core:3.2.0-beta-1'
+//    implementation 'io.insert-koin:koin-android:3.2.0-beta-1'
+//    testImplementation 'io.insert-koin:koin-test:3.2.0-beta-1'
 
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.3'

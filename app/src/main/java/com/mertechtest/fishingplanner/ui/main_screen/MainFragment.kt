@@ -6,22 +6,28 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.DefaultItemAnimator
 import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.swiperefreshlayout.widget.SwipeRefreshLayout.OnRefreshListener
+import com.mertechtest.fishingplanner.App
 import com.mertechtest.fishingplanner.R
 import com.mertechtest.fishingplanner.data.model.StateResult
 import com.mertechtest.fishingplanner.data.model.TaskDBmodel
 import com.mertechtest.fishingplanner.databinding.FragmentMainBinding
 import com.mertechtest.fishingplanner.ui.EventObserver
-import org.koin.androidx.viewmodel.ext.android.viewModel
+import javax.inject.Inject
+
 
 class MainFragment : Fragment() {
 
     private var _binding: FragmentMainBinding? = null
     private val binding get() = _binding!!
-    private val mainViewModel by viewModel<MainViewModel>()
+    lateinit var mainViewModel: MainViewModel
+
+    @Inject
+    lateinit var factory: MainViewModelFactory
+
     private lateinit var tasksAdapter: TasksAdapter
 
     override fun onCreateView(
@@ -35,6 +41,10 @@ class MainFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        (context?.applicationContext as App).appComponent.inject(this)
+
+        mainViewModel = ViewModelProvider(this, factory)[MainViewModel::class.java]
 
         binding.addTaskFab.setOnClickListener {
             findNavController().navigate(R.id.action_mainFragment_to_taskEditFragment)

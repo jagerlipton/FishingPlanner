@@ -2,6 +2,7 @@ package com.mertechtest.fishingplanner.ui.activity
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import com.mertechtest.fishingplanner.App
 import com.mertechtest.fishingplanner.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {

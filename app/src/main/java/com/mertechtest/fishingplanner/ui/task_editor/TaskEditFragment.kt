@@ -7,21 +7,28 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
+import com.mertechtest.fishingplanner.App
 import com.mertechtest.fishingplanner.data.model.StateResult
 import com.mertechtest.fishingplanner.data.model.TaskDBmodel
 import com.mertechtest.fishingplanner.databinding.FragmentTaskEditBinding
 import com.mertechtest.fishingplanner.ui.EventObserver
 import com.mertechtest.fishingplanner.ui.Utils
-import org.koin.androidx.viewmodel.ext.android.viewModel
 import java.util.*
+import javax.inject.Inject
 
 class TaskEditFragment : Fragment() {
 
     private var _binding: FragmentTaskEditBinding? = null
     private val binding get() = _binding!!
     private var currentTask = TaskDBmodel()
-    private val taskEditViewModel by viewModel<TaskEditViewModel>()
+
+
+    lateinit var taskEditViewModel: TaskEditViewModel
+
+    @Inject
+    lateinit var factory: TaskEditViewModelFactory
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -35,6 +42,10 @@ class TaskEditFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        (context?.applicationContext as App).appComponent.inject(this)
+
+        taskEditViewModel = ViewModelProvider(this, factory)[TaskEditViewModel::class.java]
 
         binding.buttonSave.setOnClickListener {
             addTask()
@@ -111,20 +122,19 @@ class TaskEditFragment : Fragment() {
 
     private fun addTask() {
         val id = arguments?.getInt("taskId") ?: -1
-        if (id!=-1) {
+        if (id != -1) {
             val name: String = binding.nameTextFieldText.text.toString()
             val date: String = binding.dateTextFieldText.text.toString()
             val location: String = binding.locationTextFieldText.text.toString()
             val info: String = binding.infoTextFieldText.text.toString()
-            taskEditViewModel.updateTaskToDB (id, name, date, location, info)
-            }
-            else {
-                val name: String = binding.nameTextFieldText.text.toString()
-                val date: String = binding.dateTextFieldText.text.toString()
-                val location: String = binding.locationTextFieldText.text.toString()
-                val info: String = binding.infoTextFieldText.text.toString()
-                taskEditViewModel.getWeatherAndTask(name, date, location, info)
-            }
+            taskEditViewModel.updateTaskToDB(id, name, date, location, info)
+        } else {
+            val name: String = binding.nameTextFieldText.text.toString()
+            val date: String = binding.dateTextFieldText.text.toString()
+            val location: String = binding.locationTextFieldText.text.toString()
+            val info: String = binding.infoTextFieldText.text.toString()
+            taskEditViewModel.getWeatherAndTask(name, date, location, info)
+        }
     }
 
     private fun closeFragment() {
